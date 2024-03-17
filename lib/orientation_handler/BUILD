@@ -5,4 +5,5 @@ cc_library(
     srcs = ["orientation_handler.cpp"],
     hdrs = ["orientation_handler.h"],
     visibility = ["//lib:__subpackages__"],
+    deps = ["//lib/point:point","//lib/direction:direction"],
 )
