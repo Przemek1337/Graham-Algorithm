@@ -5,7 +5,7 @@ void FileManager::ReadInput(std::string path, std::vector<Point> &points){
     std::ifstream file_to_read;
     file_to_read.open(path);
     if (!file_to_read.is_open()){
-        std::cerr<<"error";
+        std::cerr<<"Error";
     }
     std::fstream cin(path);
     cin >> number_of_points;
