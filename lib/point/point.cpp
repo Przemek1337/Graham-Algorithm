@@ -1,26 +1,26 @@
 #include "lib\point\point.h"
-// Przeciążenie operatora >, które umożliwia porównywanie dwóch punktów.
-// Porównanie jest przeprowadzane najpierw na podstawie współrzędnej y, a następnie x.
+// Overloading the > operator to allow comparison between two points.
+// The comparison is done first based on the y-coordinate, then the x-coordinate.
 bool Point::operator>(const Point& second_point) const{
-    // Jeśli współrzędna y pierwszego punktu jest mniejsza niż drugiego, pierwszy punkt jest "większy" w kontekście sortowania dla poprawnego działania algorytmu.
+    // If the y-coordinate of the first point is less than the second, the first point is considered "greater" in the context of sorting for the algorithm to function correctly.
     if (this->y_coordinate < second_point.y_coordinate){
         return true;
     }
-    // Jeśli współrzędna y pierwszego punktu jest większa niż drugiego, pierwszy punkt nie jest "większy".
+    // If the y-coordinate of the first point is greater than the second, the first point is not considered "greater".
     if (this->y_coordinate > second_point.y_coordinate) {
         return false;
     }
     else {
-        // Jeśli współrzędne y są równe, porównywane są współrzędne x.
-        // Pierwszy punkt jest "większy" tylko, jeśli jego współrzędna x jest mniejsza niż x drugiego punktu.
+        // If the y-coordinates are equal, the x-coordinates are compared.
+        // The first point is "greater" only if its x-coordinate is less than that of the second point.
         return this->x_coordinate < second_point.x_coordinate;
     }
 }
-//  Wyświetlanie współrzędnych punktu na standardowym wyjściu.
+// Displays the point's coordinates on the standard output.
 void Point::PrintPointCoordinates()const{
     std::cout << "(" << x_coordinate << ", " << y_coordinate << ")" << std::endl;
 }
-// Konstruktor, który inicjalizuje punkt używając podanych współrzędnych x i y.
+// Constructor that initializes a point using the provided x and y coordinates.
 Point::Point(double x, double y){
     x_coordinate = x;
     y_coordinate = y;

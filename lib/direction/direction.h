@@ -1,6 +1,6 @@
 #ifndef LIB_DIRECTION_DIRECTION_H
 #define LIB_DIRECTION_DIRECTION_H
-// Zastosowanie enum'a w celu estetyczności (w zaleznosci czy punkty są współliniowe, lewoskrętne, czy prawoskrętne)
+// Using enum for clean code
 enum Direction{
     None = 0,
     Left = 1,

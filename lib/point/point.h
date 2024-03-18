@@ -13,10 +13,10 @@ class Point{
    Point(double x, double y);
    
    bool operator>(const Point& second_point) const;
-   // Podstawowe gettery, aby uzyskać dostęp do zmiennych w innych klasach
+   // Basic Getters
    virtual double getX()const {return x_coordinate;}
    virtual double getY()const {return y_coordinate;}
-   // Podstawowe settery, by aktualizować/ustawiać wartość w innych klasach
+   // Basic Setters
    void setX(const double& newX){
     x_coordinate = newX;
    }

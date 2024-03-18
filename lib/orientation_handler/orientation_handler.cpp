@@ -1,13 +1,13 @@
 #include "lib\orientation_handler\orientation_handler.h"
-// Funkcja oblicza orientację trzech punktów (point_a, point_b, point_c) i określa, 
-// czy tworzą one zakręt w lewo, są współliniowe, czy tworzą zakręt w prawo.
+// The function calculates the orientation of three points (point_a, point_b, point_c) and determines
+// whether they form a left turn, are collinear, or form a right turn.
 Direction OrientationHandler::Orientation(Point &point_a, Point &point_b, Point &point_c) {
-    // Obliczenie wyznacznika (tutaj nazywanego 'area' choć to nie jest dosłownie pole powierzchni),
-    // który jest używany do określenia wzajemnego położenia punktów.
-    // Jest to równoważne dwa razy polu trójkąta utworzonego przez te trzy punkty.
+    // Calculate the determinant (here called 'area' though it's not literally the area),
+    // which is used to determine the relative positioning of the points.
+    // It's equivalent to twice the area of the triangle formed by these three points.
     double area = (point_b.getY() - point_a.getY()) * (point_c.getX() - point_b.getX()) - (point_b.getX() - point_a.getX()) * (point_c.getY() - point_b.getY());
     
-    if (area == 0) return Direction::None; // Zwraca None (czyli wartość [int 1 = None] korzystająć z direction.h enum'a-estetyka), oznaczając, że punkty są współliniowe.
-    return (area > 0) ? Direction::Left : Direction::Right; // Jeśli wyznacznik jest dodatni, oznacza to, że trójkąt jest zorientowany przeciwnie do ruchu wskazówek zegara (zakręt w lewo).
-    // W przeciwnym przypadku (wyznacznik ujemny) - zakręt w prawo.
+    if (area == 0) return Direction::None; // Returns None (using value [int 1 = None] from direction.h enum for aesthetic), indicating the points are collinear.
+    return (area > 0) ? Direction::Left : Direction::Right; // If the determinant is positive, it signifies that the triangle is oriented counterclockwise (left turn).
+    // Otherwise (negative determinant) - a right turn.
 }
