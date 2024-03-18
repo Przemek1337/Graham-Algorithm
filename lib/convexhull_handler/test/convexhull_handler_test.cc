@@ -17,10 +17,10 @@ bool containsPoint(const std::vector<Point>& points, const Point& point) {
 class ConvexHullHandlerTest : public ::testing::Test {
 protected:
     
-    std::vector<Point> simpleCase_first_test{{0, 0}, {1, 1}, {0, 1}, {1, 0}};       // kwadrat z punktów
+    std::vector<Point> simpleCase_first_test{{0, 0}, {1, 1}, {0, 1}, {1, 0}};       // square of points
     std::vector<Point> simpleCaseResult_first_test{{0, 0}, {1, 0}, {1, 1}, {0, 1}};
     
-    std::vector<Point> simpleCase_second_test{{0, 0}, {3, 3}, {1, 1}, {2, 2}};      // wszystkie punkty wspolliniowe
+    std::vector<Point> simpleCase_second_test{{0, 0}, {3, 3}, {1, 1}, {2, 2}};      // all points collinear
     std::vector<Point> simpleCaseResult2_second_test{{0, 0}, {1, 1}, {2, 2}, {3, 3}};
     
 };

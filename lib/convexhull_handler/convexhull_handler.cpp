@@ -1,45 +1,33 @@
 #include "lib\convexhull_handler\convexhull_handler.h"
-// Funkcja obliczająca otoczkę wypukłą dla zbioru punktów.
+// Function calculating the convex hull for a set of points.
 void ConvexHullHandler::ConvexHull(std::vector<Point> &points) {
     OrientationHandler orientationhandler;
-    // Sortowanie punktów najpierw względem współrzędnej y, a następnie x za pomocą lambdy.
+    // Sorting points first by the y-coordinate and then by the x-coordinate using a lambda function.
     std::sort(points.begin(), points.end(), [](const Point& a, const Point& b){
-            return (a.getY() < b.getY()) || (a.getY() == b.getY() && a.getX() < b.getX() );
-           
-            
+            return (a.getY() < b.getY()) || (a.getY() == b.getY() && a.getX() < b.getX() );  
         });
-    
-    
-    
-    
-    // Iteracja przez wszystkie punkty, aby zbudować dolną część otoczki.
+    // Iterating through all the points to build the lower part of the hull.
     for (int i = 0; i < points.size(); i++) {
-        // Usuwanie punktów z otoczki, które nie tworzą wypukłości.
-        while (hull.size() > 1 && orientationhandler.Orientation(hull[hull.size() - 2], hull[hull.size() - 1], points[i]) != Direction::Right) {
-            hull.pop_back();
+        // Removing points from the hull that do not create convexity.
+        while (points_vector.size() > 1 && orientationhandler.Orientation(points_vector[points_vector.size() - 2], points_vector[points_vector.size() - 1], points[i]) != Direction::Right) {
+            points_vector.pop_back();
         }
-        hull.push_back(points[i]);
-        
+        points_vector.push_back(points[i]);    
     }
-    // Inicjalizacja aktualnej pojemności hull'a po zbudowaniu dolnej otoczki
-    const auto start = hull.size();
-    // Rozpoczęcie budowania górnej części otoczki.
+    // Initializing the current capacity of the hull after building its lower part.
+    const auto start = points_vector.size();
+    // Starting to build the upper part of the hull.
     for (int i = points.size() - 1; i >= 0; i--) {
-        // Podobnie jak wcześniej, usuwanie punktów, które nie tworzą wypukłości.
-        while (hull.size() > start && orientationhandler.Orientation(hull[hull.size() - 2], hull[hull.size() - 1], points[i]) != Direction::Right) {
-            hull.pop_back();
+        // Similar to before, removing points that do not create convexity.
+        while (points_vector.size() > start && orientationhandler.Orientation(points_vector[points_vector.size() - 2], points_vector[points_vector.size() - 1], points[i]) != Direction::Right) {
+           points_vector.pop_back();
         }
-        hull.push_back(points[i]);
-        
-    }
-    
-    
-    
+        points_vector.push_back(points[i]);    
+    }   
 }
-// Funkcja wypisująca punkty otoczki na standardowe wyjście.
+// Function printing the hull points to the standard output.
 void ConvexHullHandler::PrintHull()const{
-   for (const auto& point : hull){
-     point.PrintPointCoordinates(); 
-     
+   for (const auto& point :points_vector){
+     point.PrintPointCoordinates();    
    } 
 }

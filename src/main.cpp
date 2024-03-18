@@ -2,7 +2,4 @@
 void main() {
     MainApp startapp;
     startapp.App();
-
-
-    
 }
