@@ -1,6 +1,6 @@
 ## Solution Documentation - Convex Hull Calculation
 Introduction
-This document describes the implementation of an algorithm for calculating the convex hull of a set of points in two-dimensional space. The solution is implemented in the C++ programming language and utilizes the language's standard library.
+This document describes the implementation of an algorithm for calculating the convex hull of a set of points in two-dimensional space. The solution is implemented in the C++ programming language and utilizes the language's standard library, as a compiler I used a Bazel.
 
 # How It Works
 The program uses a type of Graham Scan algorithm to compute the convex hull. The basic steps of the algorithm implemented in the ConvexHullHandler class are as follows:
