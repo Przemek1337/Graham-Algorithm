@@ -9,7 +9,7 @@ class Point{
     double y_coordinate;
     
    public:
-   Point() = default;
+   Point() = delete;
    Point(double x, double y);
    
    bool operator>(const Point& second_point) const;
