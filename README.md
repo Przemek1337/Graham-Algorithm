@@ -1,21 +1,23 @@
-## Dokumentacja Rozwiązania - Obliczanie Otoczki Wypukłej
-# Wprowadzenie
-Niniejszy dokument opisuje implementację algorytmu obliczania otoczki wypukłej dla zbioru punktów w przestrzeni dwuwymiarowej. Rozwiązanie jest zaimplementowane w języku programowania C++ i wykorzystuje standardową bibliotekę tego języka, jako kompilator został zastosowany Bazel, dodatkowo napisałem proste testy, które testują dane funkcjonalności dla wybranych zestawów danych.
+## Solution Documentation - Convex Hull Calculation
+Introduction
+This document describes the implementation of an algorithm for calculating the convex hull of a set of points in two-dimensional space. The solution is implemented in the C++ programming language and utilizes the language's standard library.
 
-# Sposób Działania
-Program korzysta z algorytmu typu Graham Scan do obliczania otoczki wypukłej. Podstawowe kroki algorytmu zostały zaimplementowane w klasie ConvexHullHandler i wyglądają następująco:
+# How It Works
+The program uses a type of Graham Scan algorithm to compute the convex hull. The basic steps of the algorithm implemented in the ConvexHullHandler class are as follows:
 
-Sortowanie punktów: Początkowo punkty są sortowane rosnąco najpierw względem współrzędnej y, a następnie x. Sortowanie to jest niezbędne do poprawnego działania głównej części algorytmu.
+Sorting Points: Initially, the points are sorted in ascending order first by y-coordinate and then by x-coordinate. This sorting is crucial for the correct operation of the main part of the algorithm.
 
-Budowa otoczki: Algorytm przetwarza posortowane punkty, budując najpierw dolną, a potem górną część otoczki. Dla każdego punktu sprawdzana jest jego orientacja względem dwóch ostatnich punktów w aktualnej otoczce. Jeśli punkt nie utrzymuje wypukłości, jest usuwany z otoczki.
+Constructing the Hull: The algorithm processes the sorted points, building first the lower and then the upper part of the hull. For each point, its orientation relative to the last two points in the current hull is checked. If a point does not maintain convexity, it is removed from the hull.
 
-Wypisanie otoczki: Po zakończeniu obliczeń, otoczka wypukła może być wypisana na standardowe wyjście przy pomocy metody PrintHull.
+Printing the Hull: After the calculations are complete, the convex hull can be printed to the standard output using the PrintHull method.
 
-# Zastosowane Technologie
-Program został zaimplementowany w języku C++ z wykorzystaniem następujących elementów i technologii:
+# Technologies Used
+The program is implemented in C++ using the following elements and technologies:
 
-Standardowa biblioteka C++ (STL): wykorzystanie kontenerów takich jak std::vector i algorytmów sortowania.
-Obiektowość: zastosowanie klas i metod do strukturyzacji kodu i reprezentacji koncepcji, takich jak punkt (Point) i obsługa orientacji (OrientationHandler).
-Lambda funkcje: użycie anonimowych funkcji w celu zwięzłego zapisu kryterium sortowania punktów.
-Zakończenie
-Implementacja algorytmu otoczki wypukłej w C++ stanowi praktyczne zastosowanie algorytmów geometrycznych. Kod jest zorganizowany obiektowo, co ułatwia zrozumienie struktury programu i jego ewentualną dalszą rozbudowę.
+C++ Standard Library (STL): Use of containers such as std::vector and sorting algorithms.
+Object-Oriented Programming: Application of classes and methods to structure the code and represent concepts like a point (Point) and orientation handling (OrientationHandler).
+Lambda Functions: Use of anonymous functions for concise specification of the point sorting criterion.
+# Conclusion
+The implementation of the convex hull algorithm in C++ serves as a practical application of geometric algorithms. The code is organized in an object-oriented manner, which facilitates understanding the program's structure and its potential further expansion.
+
+
