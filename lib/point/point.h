@@ -11,9 +11,10 @@ class Point{
    public:
    Point() = default;
    Point(double x, double y);
+   
    bool operator>(const Point& second_point) const;
-   double getX()const {return x_coordinate;}
-   double getY()const {return y_coordinate;}
+   virtual double getX()const {return x_coordinate;}
+   virtual double getY()const {return y_coordinate;}
    void setX(const double& newX){
     x_coordinate = newX;
    }
