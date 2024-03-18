@@ -1,8 +1,8 @@
-## Dokumentacja Rozwiązania - Obliczanie Otoczki Wypukłej
-#Wprowadzenie
+### Dokumentacja Rozwiązania - Obliczanie Otoczki Wypukłej
+## Wprowadzenie
 Niniejszy dokument opisuje implementację algorytmu obliczania otoczki wypukłej dla zbioru punktów w przestrzeni dwuwymiarowej. Rozwiązanie jest zaimplementowane w języku programowania C++ i wykorzystuje standardową bibliotekę tego języka.
 
-#Sposób Działania
+## Sposób Działania
 Program korzysta z algorytmu typu Graham Scan do obliczania otoczki wypukłej. Podstawowe kroki algorytmu zostały zaimplementowane w klasie ConvexHullHandler i wyglądają następująco:
 
 Sortowanie punktów: Początkowo punkty są sortowane rosnąco najpierw względem współrzędnej y, a następnie x. Sortowanie to jest niezbędne do poprawnego działania głównej części algorytmu.
@@ -11,7 +11,7 @@ Budowa otoczki: Algorytm przetwarza posortowane punkty, budując najpierw dolną
 
 Wypisanie otoczki: Po zakończeniu obliczeń, otoczka wypukła może być wypisana na standardowe wyjście przy pomocy metody PrintHull.
 
-#Zastosowane Technologie
+## Zastosowane Technologie
 Program został zaimplementowany w języku C++ z wykorzystaniem następujących elementów i technologii:
 
 Standardowa biblioteka C++ (STL): wykorzystanie kontenerów takich jak std::vector i algorytmów sortowania.
