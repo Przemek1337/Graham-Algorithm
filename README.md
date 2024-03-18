@@ -1,4 +1,4 @@
-##Dokumentacja Rozwiązania - Obliczanie Otoczki Wypukłej
+## Dokumentacja Rozwiązania - Obliczanie Otoczki Wypukłej
 #Wprowadzenie
 Niniejszy dokument opisuje implementację algorytmu obliczania otoczki wypukłej dla zbioru punktów w przestrzeni dwuwymiarowej. Rozwiązanie jest zaimplementowane w języku programowania C++ i wykorzystuje standardową bibliotekę tego języka.
 
