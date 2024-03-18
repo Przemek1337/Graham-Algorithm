@@ -5,6 +5,7 @@
 class OrientationHandler{
     public:
     OrientationHandler() = default;
+    ~OrientationHandler() = default;
     Direction Orientation(Point &point_a, Point &point_b, Point &point_c);
 };
 #endif // LIB_ORIENTATION_HANDLER_ORIENTATION_HANDLER_H

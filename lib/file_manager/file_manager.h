@@ -7,6 +7,7 @@
 class FileManager{
     public:
     FileManager() = default;
+    ~FileManager() = default;
     void ReadInput(std::string path, std::vector<Point> &points);
 };
 #endif // FILE_MANAGER_FILE_MANAGER_H

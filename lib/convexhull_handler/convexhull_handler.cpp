@@ -4,7 +4,7 @@ void ConvexHullHandler::ConvexHull(std::vector<Point> &points) {
     OrientationHandler orientationhandler;
     // Sorting points first by the y-coordinate and then by the x-coordinate using a lambda function.
     std::sort(points.begin(), points.end(), [](const Point& a, const Point& b){
-            return (a.getY() < b.getY()) || (a.getY() == b.getY() && a.getX() < b.getX() );  
+            return (a.GetYCoordinate() < b.GetYCoordinate()) || (a.GetYCoordinate() == b.GetYCoordinate() && a.GetXCoordinate() < b.GetXCoordinate() );  
         });
     // Iterating through all the points to build the lower part of the hull.
     for (int i = 0; i < points.size(); i++) {

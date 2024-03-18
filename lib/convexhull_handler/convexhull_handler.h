@@ -9,6 +9,7 @@ class ConvexHullHandler{
     std::vector<Point> points_vector;
     public:
     ConvexHullHandler() = default;
+    ~ConvexHullHandler() = default;
     void ConvexHull(std::vector<Point> &points);
     void PrintHull()const;
 };

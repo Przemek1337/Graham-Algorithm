@@ -8,6 +8,7 @@ class MainApp{
     std::vector<Point> points;  
     public:
     MainApp() = default;
+    ~MainApp() = default;
     void App();
 };
 #endif // MAINAPP_MAINAPP_H

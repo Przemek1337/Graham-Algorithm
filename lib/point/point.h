@@ -14,14 +14,14 @@ class Point{
    
    bool operator>(const Point& second_point) const;
    // Basic Getters
-   virtual double getX()const {return x_coordinate;}
-   virtual double getY()const {return y_coordinate;}
+   virtual double GetXCoordinate()const {return x_coordinate;}
+   virtual double GetYCoordinate()const {return y_coordinate;}
    // Basic Setters
-   void setX(const double& newX){
-    x_coordinate = newX;
+   void SetXCoordinate(const double& new_x_coordinate){
+    x_coordinate = new_x_coordinate;
    }
-   void setY(const double& newY){
-    x_coordinate = newY;
+   void SetYCoordinate(const double& new_y_coordinate){
+    x_coordinate = new_y_coordinate;
    }
    void PrintPointCoordinates()const;
    
