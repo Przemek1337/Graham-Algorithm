@@ -4,6 +4,7 @@
  
 #include <string>
 void MainApp::App(){ 
+    // Wywołanie wszystkich części kodu w celu przeczytania danych z pliku, zastosowania algorytmu oraz wypisania w terminalu wyniku
     std::string path;
     FileManager fileManager;
     std::cout<<"Podaj sciezke do pliku(z .txt): ";
