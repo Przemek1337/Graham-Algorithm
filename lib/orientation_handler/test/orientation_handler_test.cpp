@@ -1,20 +1,25 @@
 #include <gtest/gtest.h>
 #include "lib\orientation_handler\orientation_handler.h"
-#include "lib\direction\direction.h"
-TEST(OrientationHandlerTest, Collinear) {
-    OrientationHandler handler;
-    Point p1{0, 0}, p2{1, 1}, p3{2, 2};
-    EXPECT_EQ(handler.Orientation(p1, p2, p3), Direction:None);
+
+class OrientationHandlerFixture : public ::testing::Test::WithParamInterface<std::pair<std::vector<Point>, Direction>>
+{
+public:
+    bool CheckOrientationUsingVectorPoints(std::vector<Point> points, const Direction &direction) const
+    {
+        EXPECT_EQ(handler_.Orientation(points[0], points[1], points[2]), direction);
+    }
+    OrientationHandler handler_;
 }
 
-TEST(OrientationHandlerTest, Clockwise) {
-    OrientationHandler handler;
-    Point p1{0, 0}, p2{1, 1}, p3{1, 0};
-    EXPECT_EQ(handler.Orientation(p1, p2, p3), Direction:Right);
+TEST_P(OrientationHandlerFixture, GivenTestVector_ExpectProperOrientation)
+{
+    CheckOrientationUsingVectorPoints(GetParam().first, GetParam().second);
 }
 
-TEST(OrientationHandlerTest, Counterclockwise) {
-    OrientationHandler handler;
-    Point p1{0, 0}, p2{1, 1}, p3{0, -1};
-    EXPECT_EQ(handler.Orientation(p1, p2, p3), Direction:Left);
-}
+INSTANTIATE_TEST_CASE_P(
+    TestVectors,
+    OrientationHandlerFixture,
+    ::testing::Values(
+        std::make_pair(std::vector<Point>{{0, 0}, {1, 1}, {2, 2}}, Direction::None),
+        std::make_pair(std::vector<Point>{{0, 0}, {1, 1}, {1, 0}}, Direction::Left),
+        std::make_pair(std::vector<Point>{{0, 0}, {1, 1}, {0, -1}}, Direction::Right)));
